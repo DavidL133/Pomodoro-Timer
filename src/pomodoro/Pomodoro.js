@@ -4,8 +4,6 @@ import useInterval from "../utils/useInterval";
 import { minutesToDuration, secondsToDuration } from "../utils/duration";
 import Title from "./Title.js"
 
-// These functions are defined outside of the component to ensure they do not have access to state
-// and are, therefore, more likely to be pure.
 
 /**
  * Update the session state with new state after each tick of the interval.
@@ -59,11 +57,7 @@ function Pomodoro() {
   const [focusDuration, setFocusDuration] = useState(25);
   const [breakDuration, setBreakDuration] = useState(5);
 
-  /**
-   * Custom hook that invokes the callback function every second
-   *
-   * NOTE: You won't need to make changes to the callback function
-   */
+
   useInterval(() => {
       if (session.timeRemaining === 0) {
         new Audio("https://bigsoundbank.com/UPLOAD/mp3/1482.mp3").play();
@@ -128,7 +122,6 @@ function Pomodoro() {
         <div className="col">
           <div className="input-group input-group-lg mb-2">
             <span className="input-group-text" data-testid="duration-focus">
-{/*Update this text to display the current focus session duration */}
               Focus Duration: {minutesToDuration(focusDuration)}
             </span>
             <div className="input-group-append">

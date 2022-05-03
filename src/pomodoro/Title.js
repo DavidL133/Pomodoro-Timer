@@ -1,4 +1,3 @@
-/* TODO: Update message below to include current session (Focusing or On Break) total duration */
 
 import React from "react";
 import SubTitle from "./SubTitle";

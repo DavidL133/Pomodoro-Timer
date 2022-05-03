@@ -1,4 +1,3 @@
-/* TODO: Update message below correctly format the time remaining in the current session */
 
 import React from "react";
 
